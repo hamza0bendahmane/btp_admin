@@ -2,12 +2,20 @@ import { LucideProps } from "lucide-react";
 import { TbFileExport } from "react-icons/tb";
 import { LuUser2, LuLogOut } from "react-icons/lu";
 import { FaUser } from "react-icons/fa";
+import { RiDeleteBinLine } from "react-icons/ri";
+import { LiaArrowRightSolid } from "react-icons/lia";
+import { HiOutlinePencil } from "react-icons/hi";
+import { RxCheck } from "react-icons/rx";
 
 export const Icons = {
   TbFileExport,
   LuUser2,
   LuLogOut,
   FaUser,
+  RiDeleteBinLine,
+  HiOutlinePencil,
+  LiaArrowRightSolid,
+  RxCheck,
   // Icons
   BtmLogoDark: (props: LucideProps) => (
     <svg
@@ -447,6 +455,70 @@ export const Icons = {
         d="M11.9002 22.45C10.7652 22.155 10.4002 21.85 10.4002 21.375C10.4002 20.83 10.9052 20.45 11.7502 20.45C12.6402 20.45 12.9702 20.875 13.0002 21.5H14.1052C14.0702 20.64 13.5452 19.85 12.5002 19.595V18.5H11.0002V19.58C10.0302 19.79 9.25016 20.42 9.25016 21.385C9.25016 22.54 10.2052 23.115 11.6002 23.45C12.8502 23.75 13.1002 24.19 13.1002 24.655C13.1002 25 12.8552 25.55 11.7502 25.55C10.7202 25.55 10.3152 25.09 10.2602 24.5H9.16016C9.22016 25.595 10.0402 26.21 11.0002 26.415V27.5H12.5002V26.425C13.4752 26.24 14.2502 25.675 14.2502 24.65C14.2502 23.23 13.0352 22.745 11.9002 22.45Z"
         fill="white"
         fill-opacity="0.5"
+      />
+    </svg>
+  ),
+  notificationSideBar: (props: LucideProps) => (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="25"
+      viewBox="0 0 24 25"
+      fill="none"
+    >
+      <path
+        d="M20 12.7312V14.4313C20 17.5813 18.2 18.9313 15.5 18.9313H6.5C3.8 18.9313 2 17.5813 2 14.4313V9.03125C2 5.88125 3.8 4.53125 6.5 4.53125H9.2C9.07 4.91125 9 5.33125 9 5.78125V9.68127C9 10.6513 9.32 11.4713 9.89 12.0413C10.46 12.6113 11.28 12.9313 12.25 12.9313V14.3213C12.25 14.8313 12.83 15.1412 13.26 14.8612L16.15 12.9313H18.75C19.2 12.9313 19.62 12.8612 20 12.7312Z"
+        stroke="#D4CCBB"
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M22 5.78125V9.68127C22 11.1713 21.24 12.2912 20 12.7312C19.62 12.8612 19.2 12.9313 18.75 12.9313H16.15L13.26 14.8612C12.83 15.1412 12.25 14.8313 12.25 14.3213V12.9313C11.28 12.9313 10.46 12.6113 9.89 12.0413C9.32 11.4713 9 10.6513 9 9.68127V5.78125C9 5.33125 9.07 4.91125 9.2 4.53125C9.64 3.29125 10.76 2.53125 12.25 2.53125H18.75C20.7 2.53125 22 3.83125 22 5.78125Z"
+        stroke="#D4CCBB"
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M7.39844 22.5312H14.5984"
+        stroke="#D4CCBB"
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M11 18.9297V22.5297"
+        stroke="#D4CCBB"
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M18.4955 7.78125H18.5045"
+        stroke="#D4CCBB"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M15.6947 7.78125H15.7037"
+        stroke="#D4CCBB"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12.8939 7.78125H12.9029"
+        stroke="#D4CCBB"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
     </svg>
   ),

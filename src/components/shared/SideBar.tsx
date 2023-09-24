@@ -11,43 +11,43 @@ const linkSidebar = [
   },
   {
     id: 2,
-    icon: <Icons.dashboard className="w-[20px] h-[20px]" />,
+    icon: <Icons.user className="w-[20px] h-[20px] " />,
   },
   {
     id: 3,
-    icon: <Icons.dashboard className="w-[20px] h-[20px]" />,
+    icon: <Icons.seller className="w-[20px] h-[20px]" />,
   },
   {
     id: 4,
-    icon: <Icons.dashboard className="w-[20px] h-[20px]" />,
+    icon: <Icons.twoUsers className="w-[20px] h-[20px]" />,
   },
   {
     id: 5,
-    icon: <Icons.dashboard className="w-[20px] h-[20px]" />,
+    icon: <Icons.box className="w-[20px] h-[20px]" />,
   },
   {
     id: 6,
-    icon: <Icons.dashboard className="w-[20px] h-[20px]" />,
+    icon: <Icons.letter className="w-[20px] h-[20px]" />,
   },
   {
     id: 7,
-    icon: <Icons.dashboard className="w-[20px] h-[20px]" />,
+    icon: <Icons.saveAdd className="w-[20px] h-[20px]" />,
   },
   {
     id: 8,
-    icon: <Icons.dashboard className="w-[20px] h-[20px]" />,
+    icon: <Icons.creditCard className="w-[20px] h-[20px]" />,
   },
   {
     id: 9,
-    icon: <Icons.dashboard className="w-[20px] h-[20px]" />,
+    icon: <Icons.donation className="w-[20px] h-[20px]" />,
   },
   {
     id: 10,
-    icon: <Icons.dashboard className="w-[20px] h-[20px]" />,
+    icon: <Icons.bag className="w-[20px] h-[20px]" />,
   },
   {
     id: 11,
-    icon: <Icons.dashboard className="w-[20px] h-[20px]" />,
+    icon: <Icons.notificationSideBar className="w-[20px] h-[20px]" />,
   },
 ];
 

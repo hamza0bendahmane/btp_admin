@@ -1,5 +1,8 @@
+"use client";
+
 import * as React from "react";
 import SearchFilterTable from "../shared/SearchFilterTable";
+import { TableComponent } from "../tables/TableComponent";
 
 interface IClientContentSectionProps {}
 
@@ -11,6 +14,7 @@ const ClientContentSection: React.FunctionComponent<
   return (
     <section>
       <SearchFilterTable typeSections={typeSections} />
+      <TableComponent />
     </section>
   );
 };
