@@ -3,9 +3,13 @@ import { Button } from "../ui/Botton";
 import { Icons } from "../ui/Icons";
 import { DeleteItem } from "../modal/DeletItem";
 
-interface ITableActionsProps {}
+interface ITableActionsProps {
+  action: "client" | "user";
+}
 
-const TableActions: React.FunctionComponent<ITableActionsProps> = (props) => {
+const TableActions: React.FunctionComponent<ITableActionsProps> = ({
+  action,
+}) => {
   const deleteButton = (handelOpen: () => void) => {
     <Button
       variant="secondary"
@@ -17,9 +21,8 @@ const TableActions: React.FunctionComponent<ITableActionsProps> = (props) => {
     </Button>;
   };
 
-  return (
-    <div className="flex gap-2 items-center justify-center">
-      <DeleteItem />
+  const EditButton = () => {
+    return (
       <Button
         variant="secondary"
         size="icon"
@@ -27,6 +30,11 @@ const TableActions: React.FunctionComponent<ITableActionsProps> = (props) => {
       >
         <Icons.HiOutlinePencil className="w-7 h-7" />
       </Button>
+    );
+  };
+
+  const NextButton = () => {
+    return (
       <Button
         variant="secondary"
         size="icon"
@@ -34,6 +42,25 @@ const TableActions: React.FunctionComponent<ITableActionsProps> = (props) => {
       >
         <Icons.LiaArrowRightSolid className="w-7 h-7" />
       </Button>
+    );
+  };
+
+  return (
+    <div className="flex gap-2 items-center justify-center">
+      {/* this is the delete item modal its a dynamic modal */}
+      <DeleteItem
+        action="client"
+        title="Supression d’une service"
+        content="Etes-vous sur de supprimer cet service?"
+      />
+
+      {action === "client" && <NextButton />}
+
+      {/* this is the edit button */}
+      {/* <EditButton /> */}
+
+      {/* this is the next button */}
+      {/* <NextButton /> */}
     </div>
   );
 };

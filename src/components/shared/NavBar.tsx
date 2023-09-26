@@ -1,21 +1,25 @@
-import * as React from 'react';
-import NavBarCurrentPage from './NavBarCurrentPage';
-import { Search } from '../ui/Search';
-import { NavBarFunctions } from './NavBarFunctions';
+"use client";
 
-export interface INavbarProps {
-}
+import NavBarCurrentPage from "./NavBarCurrentPage";
+import { Search } from "../ui/Search";
+import { NavBarFunctions } from "./NavBarFunctions";
+import { usePathname } from "next/navigation";
 
-export function Navbar (props: INavbarProps) {
+export interface INavbarProps {}
+
+export function Navbar(props: INavbarProps) {
+  const pathname = usePathname();
+
+  console.log(pathname);
+  let title = pathname.split("/")[1];
+
   return (
-    <div className='w-full py-4 px-4 bg-white'>
-        <div className='px-4 flex items-center justify-between'>
-            <NavBarCurrentPage title='Client' />
-            <Search />
-            <NavBarFunctions />
-        </div>
+    <div className="w-full py-4 px-4 bg-white">
+      <div className="px-4 flex items-center justify-between">
+        <NavBarCurrentPage title={title} />
+        <Search />
+        <NavBarFunctions />
+      </div>
     </div>
   );
 }
-
-
