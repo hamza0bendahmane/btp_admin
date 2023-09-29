@@ -1,29 +1,29 @@
 "use client";
 
 import * as React from "react";
-import * as Checkbox from "@radix-ui/react-checkbox";
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
+import { cn } from "@/lib/utils";
 import { Icons } from "./Icons";
 
-export interface ICheckBoxProps {
-  label?: string;
-  id: string;
-}
+const Checkbox = React.forwardRef<
+  React.ElementRef<typeof CheckboxPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
+>(({ className, ...props }, ref) => (
+  <CheckboxPrimitive.Root
+    ref={ref}
+    className={cn(
+      "peer h-4 w-4 flex items-center justify-start shrink-0 rounded-[4px] border border-[#A97] ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-black data-[state=checked]:text-white",
+      className
+    )}
+    {...props}
+  >
+    <CheckboxPrimitive.Indicator
+      className={cn("flex items-center justify-center text-current")}
+    >
+      <Icons.RxCheck className="h-4 w-4" />
+    </CheckboxPrimitive.Indicator>
+  </CheckboxPrimitive.Root>
+));
+Checkbox.displayName = CheckboxPrimitive.Root.displayName;
 
-export default function CheckBox({ label, id }: ICheckBoxProps) {
-  return (
-    <div className="">
-      <Checkbox.Root
-        className="w-5 h-5 flex items-center hover:bg-gray-light focus:bg-blue-600 justify-center  border border-[#C3C2C2] border-solid rounded-[4px] "
-        id={id}
-        // defaultChecked={false}
-      >
-        <Checkbox.Indicator className="CheckboxIndicator">
-          <Icons.RxCheck />
-        </Checkbox.Indicator>
-      </Checkbox.Root>
-      <label htmlFor={id} className="CheckboxLabel">
-        {label}
-      </label>
-    </div>
-  );
-}
+export { Checkbox };

@@ -9,7 +9,11 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-main text-white ",
-        secondary: "bg-bg_primary text-primary  ",
+        secondary: "bg-bg_primary text-primary",
+        green: "text-[#50FA00] bg-[#DAFCE3] ",
+        yellow: "text-black bg-[#FAFBC2]",
+        orange: "bg-[#FAFBC2] text-[#FF9900]",
+        red: "bg-[#FFEDED] text-[#FF0000]",
       },
       size: {
         sm: "h-9 px-4 ",

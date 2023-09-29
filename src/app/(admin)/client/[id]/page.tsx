@@ -4,7 +4,7 @@ import { TableComponent } from "@/components/tables/TableComponent";
 
 export default function page() {
   return (
-    <main className="h-[100vh] px-10 py-2 flex gap-2 flex-col">
+    <main className=" px-10 py-2 flex gap-2 flex-col">
       <PageDescription
         className="text-black font-semibold"
         text="Utilisateurs > anouar"
@@ -30,7 +30,7 @@ export default function page() {
         <DescriptionSectionUnit title="E-mail" content="mahdign@gmail.com" />
       </div>
       <PageDescription text="Commandes" number={5} />
-      <TableComponent />
+      <TableComponent type="user" />
     </main>
   );
 }

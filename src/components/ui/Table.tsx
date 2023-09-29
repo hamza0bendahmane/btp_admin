@@ -1,120 +1,114 @@
 import * as React from "react";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import TableActions from "../tables/TableActions";
-import CheckBox from "./CheckBox";
 
-function createData(
-  checker: React.ReactNode,
-  date: Date,
-  title: string,
-  sector: string,
-  company: string,
-  region: string,
-  action: React.ReactNode
-) {
-  return { checker, date, title, sector, company, region, action };
-}
+import { cn } from "@/lib/utils";
 
-let date = new Date();
+const Table = React.forwardRef<
+  HTMLTableElement,
+  React.HTMLAttributes<HTMLTableElement>
+>(({ className, ...props }, ref) => (
+  <div className="relative w-full overflow-auto">
+    <table
+      ref={ref}
+      className={cn("w-full caption-bottom text-sm", className)}
+      {...props}
+    />
+  </div>
+));
+Table.displayName = "Table";
 
-const rows = [
-  createData(
-    <CheckBox id={"c1"} />,
-    date,
-    "Ingénieur de sécurité",
-    "Services",
-    "Air France",
-    "Nantes",
-    <TableActions />
-  ),
-  createData(
-    <CheckBox id={"c2"} />,
-    date,
-    "Ingénieur de sécurité",
-    "Services",
-    "Air France",
-    "Nantes",
-    <TableActions />
-  ),
-  createData(
-    <CheckBox id={"c3"} />,
-    date,
-    "Ingénieur de sécurité",
-    "Services",
-    "Air France",
-    "Nantes",
-    <TableActions />
-  ),
-  createData(
-    <CheckBox id={"c4"} />,
-    date,
-    "Ingénieur de sécurité",
-    "Services",
-    "Air France",
-    "Nantes",
-    <TableActions />
-  ),
-  createData(
-    <CheckBox id={"c5"} />,
-    date,
-    "Ingénieur de sécurité",
-    "Services",
-    "Air France",
-    "Nantes",
-    <TableActions />
-  ),
-];
+const TableHeader = React.forwardRef<
+  HTMLTableSectionElement,
+  React.HTMLAttributes<HTMLTableSectionElement>
+>(({ className, ...props }, ref) => (
+  <thead ref={ref} className={cn("[&_tr]:border-b", className)} {...props} />
+));
+TableHeader.displayName = "TableHeader";
 
-const tabCell = [
-  "checker",
-  "Date d'ajout",
-  "Titre du position",
-  "Secteur d’activité",
-  "Entreprise",
-  "Région, Ville",
-  "Actions",
-];
+const TableBody = React.forwardRef<
+  HTMLTableSectionElement,
+  React.HTMLAttributes<HTMLTableSectionElement>
+>(({ className, ...props }, ref) => (
+  <tbody
+    ref={ref}
+    className={cn("[&_tr:last-child]:border-0", className)}
+    {...props}
+  />
+));
+TableBody.displayName = "TableBody";
 
-export default function BasicTable() {
-  return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            {tabCell.map((item, index) => {
-              return (
-                <TableCell key={index} align="center">
-                  {item}
-                </TableCell>
-              );
-            })}
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row, index) => (
-            <TableRow
-              key={index}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
-              <TableCell align="center">{row.checker}</TableCell>
-              <TableCell align="center">
-                {row.date.toLocaleDateString()}
-              </TableCell>
-              <TableCell align="center">{row.title}</TableCell>
-              <TableCell align="center">{row.company}</TableCell>
-              <TableCell align="center">{row.sector}</TableCell>
-              <TableCell align="center">{row.region}</TableCell>
-              <TableCell align="center">{row.action}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
-}
+const TableFooter = React.forwardRef<
+  HTMLTableSectionElement,
+  React.HTMLAttributes<HTMLTableSectionElement>
+>(({ className, ...props }, ref) => (
+  <tfoot
+    ref={ref}
+    className={cn("bg-primary font-medium text-primary-foreground", className)}
+    {...props}
+  />
+));
+TableFooter.displayName = "TableFooter";
+
+const TableRow = React.forwardRef<
+  HTMLTableRowElement,
+  React.HTMLAttributes<HTMLTableRowElement>
+>(({ className, ...props }, ref) => (
+  <tr
+    ref={ref}
+    className={cn(
+      "border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted",
+      className
+    )}
+    {...props}
+  />
+));
+TableRow.displayName = "TableRow";
+
+const TableHead = React.forwardRef<
+  HTMLTableCellElement,
+  React.ThHTMLAttributes<HTMLTableCellElement>
+>(({ className, ...props }, ref) => (
+  <th
+    ref={ref}
+    className={cn(
+      "h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0",
+      className
+    )}
+    {...props}
+  />
+));
+TableHead.displayName = "TableHead";
+
+const TableCell = React.forwardRef<
+  HTMLTableCellElement,
+  React.TdHTMLAttributes<HTMLTableCellElement>
+>(({ className, ...props }, ref) => (
+  <td
+    ref={ref}
+    className={cn("p-4 align-middle [&:has([role=checkbox])]:pr-0", className)}
+    {...props}
+  />
+));
+TableCell.displayName = "TableCell";
+
+const TableCaption = React.forwardRef<
+  HTMLTableCaptionElement,
+  React.HTMLAttributes<HTMLTableCaptionElement>
+>(({ className, ...props }, ref) => (
+  <caption
+    ref={ref}
+    className={cn("mt-4 text-sm text-muted-foreground", className)}
+    {...props}
+  />
+));
+TableCaption.displayName = "TableCaption";
+
+export {
+  Table,
+  TableHeader,
+  TableBody,
+  TableFooter,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableCaption,
+};

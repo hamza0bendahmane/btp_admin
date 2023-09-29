@@ -13,6 +13,10 @@ export function Navbar(props: INavbarProps) {
   console.log(pathname);
   let title = pathname.split("/")[1];
 
+  if (title === "") {
+    title = "Dashboard";
+  }
+
   return (
     <div className="w-full py-4 px-4 bg-white">
       <div className="px-4 flex items-center justify-between">

@@ -5,6 +5,8 @@ import { FaUser } from "react-icons/fa";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { LiaArrowRightSolid } from "react-icons/lia";
 import { HiOutlinePencil } from "react-icons/hi";
+import { RxEyeOpen } from "react-icons/rx";
+import { GoEyeClosed } from "react-icons/go";
 import { RxCheck } from "react-icons/rx";
 
 export const Icons = {
@@ -16,6 +18,8 @@ export const Icons = {
   HiOutlinePencil,
   LiaArrowRightSolid,
   RxCheck,
+  RxEyeOpen,
+  GoEyeClosed,
   // Icons
   EditPencil: (props: LucideProps) => (
     <svg

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Botton";
 import { Icons } from "@/components/ui/Icons";
 import { Input } from "@/components/ui/Inputs";
+import { PasswordInput } from "@/components/ui/PasswordInput";
 import Image from "next/image";
 import * as React from "react";
 
@@ -24,11 +25,7 @@ const App: React.FunctionComponent<IAppProps> = (props) => {
               <Input type="text" placeholder="Email" className="w-[380px]" />
             </div>
             <div>
-              <Input
-                type="password"
-                placeholder="Mot de passe"
-                className="w-[380px]"
-              />
+              <PasswordInput placeholder="Mot de Passe" />
             </div>
             <span className="text-[#08A6FF] font-medium text-xs cursor-pointer ml-2">
               mot de passe oublié ?

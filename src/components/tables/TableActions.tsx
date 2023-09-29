@@ -4,11 +4,15 @@ import { Icons } from "../ui/Icons";
 import { DeleteItem } from "../modal/DeletItem";
 
 interface ITableActionsProps {
-  action: "client" | "user";
+  supp?: boolean;
+  edit?: boolean;
+  next?: boolean;
 }
 
 const TableActions: React.FunctionComponent<ITableActionsProps> = ({
-  action,
+  supp = true,
+  edit = true,
+  next = true,
 }) => {
   const deleteButton = (handelOpen: () => void) => {
     <Button
@@ -48,19 +52,17 @@ const TableActions: React.FunctionComponent<ITableActionsProps> = ({
   return (
     <div className="flex gap-2 items-center justify-center">
       {/* this is the delete item modal its a dynamic modal */}
-      <DeleteItem
-        action="client"
-        title="Supression d’une service"
-        content="Etes-vous sur de supprimer cet service?"
-      />
 
-      {action === "client" && <NextButton />}
+      {supp && (
+        <DeleteItem
+          action="client"
+          title="Supression d’une service"
+          content="Etes-vous sur de supprimer cet service?"
+        />
+      )}
 
-      {/* this is the edit button */}
-      {/* <EditButton /> */}
-
-      {/* this is the next button */}
-      {/* <NextButton /> */}
+      {edit && <EditButton />}
+      {next && <NextButton />}
     </div>
   );
 };

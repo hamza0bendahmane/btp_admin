@@ -1,12 +1,19 @@
 import * as React from "react";
-import BasicTable from "../ui/Table";
+import BasicTable from "./TableDate";
+import PaginationButtons from "../ui/PaginationSlider";
+import BasicTableButton from "./TableButton";
 
-export interface ITableComponentProps {}
+export interface ITableComponentProps {
+  type: "date" | "user";
+}
 
-export function TableComponent(props: ITableComponentProps) {
+export function TableComponent({ type }: ITableComponentProps) {
   return (
     <div className="py-10">
-      <BasicTable />
+      {type === "date" ? <BasicTable /> : <BasicTableButton />}
+      <div className="flex items-center justify-center py-6 w-full">
+        <PaginationButtons />
+      </div>
     </div>
   );
 }
